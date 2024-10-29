@@ -1,0 +1,777 @@
+/* Base styles (unchanged) */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Header styles (unchanged) */
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 10px 5%;
+}
+
+/* Navigation styles (unchanged) */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo {
+    margin-left: 2%;
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 25px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #e76851;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+    height: 5px;
+}
+
+/* Header text */
+.header-text {
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    right: 50px; /* Keeps it 50px away from the right */
+    transform: translateY(-50%); /* Adjusts for the text's height */
+    font-size: 50px;
+}
+#greeting {
+    color: #FF6347; /* Tomato color */
+    font-weight: bold;
+    font-size: 60px;
+    /* font-style: oblique; */
+}
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span {
+    color: #FF6347;
+}
+
+/* About section */
+#about {
+    margin-top: 50px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    height:  580px;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    margin: 10px; 
+}
+
+.about-col-1 img {
+    width: 100%; 
+    height: 559px; 
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    padding: 20px;
+    margin: 5px; /* Added margin for spacing on small screens */
+}
+
+.about-col-2 span {
+    color: #e76851;
+}
+
+.subtitle {
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffff;
+}
+
+.text {
+    font-size: 18px;
+    text-align: start;
+}
+
+.tab-titles {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of tabs */
+    margin: 20px 0; /* Adjusted for better spacing */
+}
+
+.tab-divider {
+    display: none; /* Hide by default */
+    border: none; /* Remove default border */
+    height: 2.5px; /* Set height of the divider */
+    background-color: #ea4d4d; /* Set color of the divider */
+    margin: 1px 0; /* Set margin for spacing */
+}
+
+.tab-links {
+    margin-right: 20px; /* Adjusted margin for larger screens */
+    font-size: 22px;    /* Default font size */
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Responsive Styles */
+
+
+@media (max-width: 768px) {
+    .tab-divider {
+        display: block; /* Show the divider on small screens */
+    }
+
+    .tab-links {
+        margin-right: 10px; /* Reduce margin for smaller screens */
+        font-size: 18px;    /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-divider {
+        display: block; /* Show the divider on small screens */
+    }
+
+    .tab-titles {
+        flex-direction: column; /* Stack the tabs vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .tab-links {
+        margin: 5px 0; /* Add vertical margin for spacing */
+        font-size: 16px; /* Further decrease font size */
+    }
+}
+
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #e76851;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.8s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+    height: 4px;
+}
+
+.tab-contents ul li {
+    font-size: 20px;
+    list-style: square;
+    margin: 15px 0;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* Skills Bar Styles */
+.bar {
+    background: #353548;
+    display: block;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 3);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgb(45, 14, 3);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.bar:hover {
+    box-shadow: 0 5px 20px rgba(210, 75, 26);
+}
+
+.bar span {
+    height: 20px;
+    float: left;
+    background: linear-gradient(135deg, rgb(164, 29, 29) 0%, rgb(210, 75, 26) 100%);
+}
+
+.html {
+    width: 40%;
+    animation: html 3s;
+}
+
+.css {
+    width: 30%;
+    animation: css 3s;
+}
+
+.java {
+    width: 62%;
+    animation: java 3s;
+}
+
+.python {
+    width: 58%;
+    animation: python 3s;
+}
+
+.c {
+    width: 40%;
+    animation: c 3s;
+}
+
+@keyframes html {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+@keyframes css {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 30%;
+    }
+}
+
+@keyframes java {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 62%;
+    }
+}
+
+@keyframes python {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 58%;
+    }
+}
+
+@keyframes c {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+#hobbies {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    color: #e76851;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.hobbies-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between each section */
+}
+
+.hobby {
+    flex-basis: 30%; /* Each hobby takes up 30% of the container width */
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.hobby:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hobby h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.hobby video {
+    width: 100%; /* Ensures the video spans the full width of the box */
+    height: 95%; /* Set a specific height for all videos */
+    border-radius: 8px; /* Optional: Adds rounding to the video edges */
+}
+
+
+.video-fill {
+    object-fit:none; /* Ensures the video fills the entire area, possibly cropping */
+}
+
+.video-cover {
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+}
+
+
+/* =========MUSIC======== */
+#music {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.music-player {
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    align-items: center;
+}
+
+.music-player:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#album-art {
+    height: 400px;
+    width: 400px;
+}
+#audio-player {
+    width: 450px;
+}
+.music-player h2 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.controls button {
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 5px;
+    background-color: #d44848; 
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #f23232; 
+}
+
+audio {
+    width: 1%;
+    margin-top: 0px;
+}
+
+
+
+/* Contact Section */
+#contact {
+    margin-top: 50px;
+    padding: 80px ;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    border-radius: 15px;
+}
+
+#contact .subtitle {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #e76851;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-icon {
+    font-size: 40px;
+    color: #fff;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #e76851;
+}
+
+/* Google Maps */
+#iframe-container {
+    margin-top: 40px; /* Space above the map */
+    overflow: hidden; /* Ensures iframe is contained */
+    position: relative; /* For responsive iframe */
+    padding-top: 56.25%; /* Default aspect ratio for larger screens */
+    /* display: flex;          /* Use flexbox to center content 
+    justify-content: center; /* Center horizontally 
+    margin: 20px 0;        Add margin for spacing */
+}
+
+#contact iframe {
+    width: 100%;           /* Make the iframe responsive */
+    max-width: 1000px;    /* Set a maximum width */
+    height: 400px;        /* Set a fixed height */
+    border: 0;            /* Remove border */
+}
+
+
+/* Footer */
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+    position: relative;
+}
+
+nav .fa-solid{
+    display: none;
+}
+/* Media Queries */
+
+@media (max-width: 708px) {
+
+    #header{
+        background-image: url("phone\ background.jpg");
+    }
+    .header-text {
+        position: absolute;
+        top: 50%; /* Centers vertically */
+        right: 25px; /* Keeps it 50px away from the right */
+        transform: translateY(-50%); /* Adjusts for the text's height */
+        font-size: 35px;
+        /* margin-left: 5%;
+        font-size: 30px; */
+    }
+
+    #greeting{
+        font-size: 35px;
+    }
+
+    .header-text h1 {
+        font-size: 35px;
+    }
+
+    nav .fa-solid{
+        margin-right: 25px;
+        display: block;
+        font-size: 25px;
+    }
+    .row {
+        /* display: flex; */
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        height: 100%;
+    }
+    
+    .about-col-1 img{
+        width: 380px;
+        height: 400px;
+       /* flex-basis: auto;
+       padding: 0; */
+    }
+    .about-col-2 {
+        flex-basis: 100%; /* Stack columns on smaller screens */
+        padding: 10px;
+    }
+    .about-col-2 .subtitle{
+        font-size: 40px;
+    }
+    .about-col-2 .text {
+        font-size: 15px;
+    
+    }
+    .tab-titles .tab-links {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping of tabs */
+        font-size: 18px
+    }
+
+    .hobbies-grid {
+        flex-direction: column; /* Stack hobbies on smaller screens */
+        gap: 10px; /* Reduce gap for small screens */
+    }
+
+    .hobby {
+        flex-basis: 100%; /* Each hobby takes full width */
+    }
+    nav ul{
+        background-color: #e76851;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+        opacity: 0.8;
+    }
+    nav ul li {
+        display: block;
+        margin: 35px 50px; /* Adjust spacing for smaller screens */
+    }
+
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+
+    #music {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    .music-player {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 20px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        align-items: center;
+    }
+    
+    .music-player:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(244, 57, 0, 0.2);
+    }
+    #album-art {
+        height: 100%;
+        width: 100%;
+    }
+    #audio-player {
+        width: 100%;
+    }
+    
+    .music-player h2 {
+        color: #fff;
+        font-size: 24px;
+    }
+    
+    .controls button {
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 5px;
+        background-color: #d44848; 
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .controls button:hover {
+        background-color: #f23232; 
+    }
+    
+    audio {
+        width: 1%;
+        margin-top: 0px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    #about .container {
+        padding: 10px;
+    }
+
+
+    #greeting{
+        font-size: 28px;
+    }
+
+    .header-text h1 {
+        font-size: 28px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-col-1 img {
+        width: 100%;  /* Make image take full width */
+        max-width: 250px; /* Restrict max width */
+        height: auto; /* Maintain aspect ratio */
+        display: block;
+        margin: 0 auto; /* Center the image */
+    }
+
+    .about-col-2 {
+        padding: 10px;
+    }
+
+    .subtitle {
+        font-size: 24px; /* Adjust subtitle font size */
+        margin-bottom: 10px;
+    }
+
+    .text {
+        font-size: 14px; /* Adjust text size */
+        line-height: 1.5;
+    }
+
+    .tab-titles {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center; /* Center tab links */
+        flex-wrap: wrap; /* Wrap tabs to next line if needed */
+        margin-bottom: 20px;
+    }
+
+    .tab-titles .tab-links {
+        margin: 1px -10px;
+        font-size: 18px;
+    }
+    .about-col-2 .text {
+        text-align:justify;
+    }
+
+    .tab-links {
+    
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    /* background-color: rgba(219, 56, 56, 0.3); Change color and set opacity (80%) */
+    /* border-radius: 10px; Optional: add rounded corners */
+    /* Example for background size */
+    /* background-size: cover; If you use a background image */
+    }
+
+    .tab-contents ul {
+        padding-left: 0; /* Remove default padding */
+        list-style: none; /* Remove bullet points */
+        text-align: left;
+    }
+
+    .tab-contents ul li {
+        margin-bottom: 10px; /* Space between list items */
+        font-size: 14px; /* Adjust font size for list items */
+    }
+
+    .tab-contents ul li span {
+        font-weight: bold; /* Bold labels */
+    }
+  
+    #contact {
+        padding: 30px 15px;
+    } 
+ 
+    .iframe-container {
+        margin-top: 20px; 
+        padding-top: 0; 
+        
+    } 
+
+}
+
+.link.active {
+    color: #e76851;
+}
+
+.link.active::after {
+    width: 100%;
+    height: 5px;
+}
+
+

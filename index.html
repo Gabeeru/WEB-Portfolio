@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4b1afe75cc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <section id="home">
+        <header id="header">
+            <div class="container">
+                <nav>
+                    <img src="Logo.png" class="logo" alt="Logo">
+                    <ul id="sidemenu">
+                        <li onclick="closemenu()"><a href="#" class="link" id="home-link">Home</a></li>
+                        <li onclick="closemenu()"><a href="#about" class="link" id="about-link">About</a></li>
+                        <li onclick="closemenu()"><a href="#hobbies" class="link" id="hobbies-link">Hobbies</a></li>
+                        <li onclick="closemenu()"><a href="#contact" class="link" id="contact-link">Contact Me</a></li>
+                        <i class="fa-solid fa-times" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p id="greeting"></p>
+                    <h1>Hi, I'm <span>Gabriel</span><br>a BSIT Student</h1>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="mee.jpg" alt="Picture of Gabriel">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="subtitle">About <span title="Gab was here">Me</span></h1>
+                        <p class="text">
+                            Hi, I'm Gabriel Matthew Cabije, a 2nd-year BSIT student from Cordova, Cebu. 
+                            I'm passionate about web development and currently learning Python, Java, C, HTML, CSS, and 
+                            JavaScript. I also enjoy staying active at the gym, focusing on building both 
+                            my physical and mental discipline.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('introduction')">Information</p>
+                            <p class="tab-links" onclick="opentab('skills')">Programming Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+
+                        <hr class="tab-divider">
+
+                        <div class="tab-contents active-tab" id="introduction">
+                            <ul>
+                                <li><span>Full name:</span><br>Gabriel Matthew Lopez Cabije</li>
+                                <li><span>Age:</span><br>19</li>
+                                <li><span>Date of Birth:</span><br>January 23, 2005</li>
+                                <li><span>Sex:</span><br>Male</li>
+                                <li><span>Address:</span><br><a href="https://maps.app.goo.gl/ugv5CRQCZcN5pYzF8" style="color: inherit;">Buagsong Cordova Cebu</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="skills">
+                            <ul>
+                                <li><h3 style="margin: 5px;">HTML</h3>
+                                    <span class="bar"><span class="html"></span></span>
+                                </li>
+                                <li><h3 style="margin: 5px;">CSS</h3>
+                                    <span class="bar"><span class="css"></span></span>
+                                </li>
+                                <li><h3 style="margin: 5px;">Java</h3>
+                                    <span class="bar"><span class="java"></span></span>
+                                </li>
+                                <li><h3 style="margin: 5px;">Python</h3>
+                                    <span class="bar"><span class="python"></span></span>
+                                </li>
+                                <li><h3 style="margin: 5px;">C</h3>
+                                    <span class="bar"><span class="c"></span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Elementary:</span><br>Buagsong Elementary School(BES)</li>
+                                <li><span>High School:</span><br>Cordova Catholic Cooperative School(CCCS)</li>
+                                <li><span>College:</span><br>Cebu Technological University(CTU)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="hobbies">
+            <div class="container">
+                <h1 class="subtitle">My Hobbies</h1>
+                <div class="hobbies-grid">
+                    <div class="hobby">
+                        <h2>Bodybuilding</h2>
+                        <video class="video-fill" controls width="100%">
+                            <source src="weights.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="hobby">
+                        <h2>Playing w/ Pajit</h2>
+                        <video class="video-fill" controls width="100%">
+                            <source src="pajit.mp4" type="video/mp4">
+                            Your browser does not support the video tag./
+                        </video>
+                    </div>
+                    <div class="hobby">
+                        <h2>Gaming</h2>
+                        <video class="video-cover" controls width="100%">
+                            <source src="lenoj.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Music Section -->
+        <section id="music">
+            <div class="container">
+                <h1 class="subtitle">My Top 3 Music</h1>
+                <div class="music-player">
+                    <h2 id="song-title">Balang Araw - I Belong to the Zoo</h2>
+                    <img id="album-art" src="m1.png" alt="Album Art" width="200px" />
+                    <audio id="audio-player" controls controlslist="nodownload noplaybackrate nofastforward norewind">
+                        <source id="audio-source" src="balangaraw.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="controls">
+                        <button id="prev-song">Previous</button>
+                        <button id="next-song">Next</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+        <section id="contact">
+            <div class="container">
+                <h1 class="subtitle">Contact Me</h1>
+                <p>If you would like to reach out to me, feel free to contact me on any of my social media platforms below:</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/gabokugnawng" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gabynconfused_/" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Grxft" target="_blank" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/Gabeeru" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <h2 style="margin-top: 40px;">Find Me Here:</h2>
+                
+                <!-- Google Maps Embed -->
+                <div class="iframe-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d245.38201269959268!2d123.94135561935622!3d10.252586118598414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDE1JzA5LjciTiAxMjPCsDU2JzI4LjgiRQ!5e0!3m2!1sen!2sph!4v1728544337796!5m2!1sen!2sph" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; Gabriel Matthew L Cabije BSIT II-2.</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
