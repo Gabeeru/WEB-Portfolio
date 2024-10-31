@@ -118,7 +118,7 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; 
-    height: 620px;
+    height: 100%;
 }
 
 .about-col-1 {
@@ -787,7 +787,7 @@ nav .fa-solid{
     .row {
         justify-content: space-between;
         flex-wrap: wrap; 
-        height:auto;
+        height: 100%;
         display: inline;
         
     }
