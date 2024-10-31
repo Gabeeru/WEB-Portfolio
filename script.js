@@ -50,18 +50,18 @@
         const songs = [
             {
                 title: "Balang Araw - I Belong to the Zoo",
-                src: "balangaraw.mp3",
-                albumArt: "m1.png"
+                src: "assets/balangaraw.mp3",
+                albumArt: "assets/m1.png"
             },
             {
                 title: "IF AND/OR WHEN - Ruel",
-                src: "ifandorwhen.mp3",
-                albumArt: "m2.png"
+                src: "assets/ifandorwhen.mp3",
+                albumArt: "assets/m2.png"
             },
             {
                 title: "In The Stars - Benson Boone",
-                src: "inthestars.mp3",
-                albumArt: "m3.png"
+                src: "assets/inthestars.mp3",
+                albumArt: "assets/m3.png"
             }
         ];
         
