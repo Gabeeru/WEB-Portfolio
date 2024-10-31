@@ -94,30 +94,56 @@
         // Initial load
         loadSong(currentSongIndex);
 
-const sections = document.querySelectorAll("section");
-const links = document.querySelectorAll(".link")
 
-const observerOptions = {
-    threshold: 0.75,
-}
 
-const observer = new IntersectionObserver((entries)=> {
-    entries.forEach((entry)=> {
-      if (entry.isIntersecting) {
-        const data = entry.target.getAttribute("id")
-        links.forEach((link)=> {
-            if (link.getAttribute("id") == `${data}-link`) {
-                link.classList.add("active")       
-            }   
-            else  {
-                link.classList.remove("active")
+
+
+
+        const sections = document.querySelectorAll("section");
+        const links = document.querySelectorAll(".link");
+        
+        const observerOptions = {
+            threshold: 0.75,
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const data = entry.target.getAttribute("id");
+                    links.forEach((link) => {
+                        if (link.getAttribute("id") == `${data}-link`) {
+                            link.classList.add("active");
+                        } else {
+                            link.classList.remove("active");
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Function to initialize the observer
+        function initObserver() {
+            if (window.innerWidth > 768) { // Adjust this value as needed
+                sections.forEach((section) => {
+                    observer.observe(section);
+                });
             }
-        })
-      }
-    })
-}, observerOptions)
-
-sections.forEach((section)=> {
-    observer.observe(section)
-})
+        }
+        
+        // Function to disconnect the observer
+        function disconnectObserver() {
+            observer.disconnect();
+        }
+        
+        // Initial observer setup
+        initObserver();
+        
+        // Listen for window resize to manage observer initialization
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                disconnectObserver(); // Disconnect if in responsive mode
+            } else {
+                initObserver(); // Re-initialize when back in desktop mode
+            }
+        });
         
