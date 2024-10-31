@@ -552,9 +552,9 @@ nav .fa-solid{
     }
     
     .about-col-1 img{
-        display: block; /* Make it a block element */
-        margin-left: auto; /* Center using margin */
-        margin-right: auto; /* Center using margin */
+        display: block;
+        margin-left: auto; 
+        margin-right: auto; 
         width: 378px;
         height: 400px;
    
