@@ -118,7 +118,7 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; 
-    height:  580px;
+    height: 620px;
 }
 
 .about-col-1 {
@@ -517,7 +517,7 @@ nav .fa-solid{
 }
 /* Media Queries */
 
-@media (max-width: 708px) {
+@media (max-width: 768px) {
 
     #header{
         background-image: url("phone\ background.jpg");
@@ -552,7 +552,10 @@ nav .fa-solid{
     }
     
     .about-col-1 img{
-        width: 380px;
+        display: block; /* Make it a block element */
+        margin-left: auto; /* Center using margin */
+        margin-right: auto; /* Center using margin */
+        width: 378px;
         height: 400px;
    
     }
